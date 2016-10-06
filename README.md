@@ -6,7 +6,8 @@ Salt master docker image
 ### Environment variables
 
 * SALT_CONFIG_DIR=/data/config
-The default value is `/data/config`. You will have to mount a volume here or you will lose your changes if you destroy the container
+
+The default value is `/data/config`. You will have to mount a volume here or you will lose your changes if you destroy the container.
 
 * SALT_LOG_LEVEL=warning
 
@@ -18,8 +19,8 @@ The default value is `/data/config`. You will have to mount a volume here or you
 
 ### Expose ports
 
-If you want your `salt-master` container to be reachable from outside, you'll have to expose ports `4505` and `4506` which
-are the `salt-master` default ports
+If you want your `salt-master` container to be reachable from outside, you will have to expose ports `4505` and `4506` which
+are the `salt-master` default ports.
 
 ### Run salt-master
 
