@@ -1,7 +1,5 @@
 FROM centos
 
-# ENV SALT_VERSION=v2016.3.3
-
 # Update the container
 RUN yum update -y
 
@@ -25,6 +23,9 @@ WORKDIR /data
 COPY bootstrap.sh bootstrap.sh
 RUN chmod 755 bootstrap.sh
 
+# Small cleanup
+RUN yum clean all
+
 # Volumes
 VOLUME ["/data/config", "/var/log/salt", "/var/cache/salt"]
 
@@ -32,5 +33,4 @@ VOLUME ["/data/config", "/var/log/salt", "/var/cache/salt"]
 EXPOSE 4505 4506
 
 # Entrypoint
-ENTRYPOINT ["/data/bootstrap.sh"]
-CMD ["bash"]
+CMD ["/data/bootstrap.sh"]
