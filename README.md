@@ -27,3 +27,12 @@ are the `salt-master` default ports.
 ```
 docker run -ti -d -e SALT_LOG_LEVEL=info -v $(pwd)/config:/data/config -p 4505:4505 -p 4506:4506 notuscloud/salt-master
 ```
+
+## salt-ssh
+
+You can use `salt-ssh` with this docker image by overriding the default command.
+Update your `/data/config/roster` file then run: 
+
+```
+docker run -ti --rm -v $(pwd)/config:/data/config notuscloud/salt-master salt-ssh yourtarget -r "ls -al" 
+```
