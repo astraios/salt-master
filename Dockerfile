@@ -22,6 +22,7 @@ RUN mkdir /data
 WORKDIR /data
 COPY bootstrap.sh bootstrap.sh
 RUN chmod 755 bootstrap.sh
+RUN cp -a /etc/salt /data/etc-template
 
 # Small cleanup
 RUN yum clean all
